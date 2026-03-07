@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王沛焘 | 软件开发工程师</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            opacity: 0.9;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .section {
+            padding: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title .icon {
+            font-size: 1.3em;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 3px solid #3498db;
+            padding-bottom: 20px;
+        }
+        
+        .timeline-item:last-child {
+            border-left-color: transparent;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+        
+        .timeline-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+        
+        .timeline-item .company {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item .time {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item ul {
+            list-style: none;
+            color: #555;
+        }
+        
+        .timeline-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+        
+        .paper-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .paper-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .paper-item .journal {
+            color: #3498db;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .paper-item p {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e8f4f8;
+            color: #3498db;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="card">
+            <div class="header">
+                <h1>王沛焘</h1>
+                <p class="title">软件开发工程师 | 计算机技术硕士</p>
+                <div class="contact-info">
+                    <a href="tel:17803908300">📱 178-0390-8300</a>
+                    <a href="mailto:wptao_98@163.com">📧 wptao_98@163.com</a>
+                    <a href="#">📍 上海</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">👨‍💻</span> 关于我</h2>
+                <p style="color: #555; line-height: 1.8;">
+                    中共党员，郑州大学计算机技术硕士。现就职于中航模拟系统有限公司，参与重点国防项目研发。
+                    专注于仿真系统开发、计算机视觉和人体动作识别领域。在 ACCV 2022 发表 oral 论文，
+                    拥有发明专利和软件著作权。热爱技术，追求极致，具备良好的沟通能力和团队协作精神。
+                </p>
+                <div style="margin-top: 15px;">
+                    <span class="tag">C++</span>
+                    <span class="tag">Qt</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Transformer</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">计算机视觉</span>
+                    <span class="tag">仿真系统</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Experience -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">💼</span> 工作经历</h2>
+                
+                <div class="timeline-item">
+                    <h3>软件开发工程师 · 技术研发部</h3>
+                    <p class="company">中航模拟系统有限公司</p>
+                    <p class="time">2023.06 - 至今 | 上海</p>
+                    <ul>
+                        <li>参与重点国防项目，负责战场仿真系统开发与集成</li>
+                        <li>借调中国航空工业集团某所（2023.8-2024.3、2025.1-2025.5），入选"育鹰计划"</li>
+                        <li>负责系统需求调研与分析，撰写《需求规格说明书》《软件设计说明书》</li>
+                        <li>遵循 GJB5000B、438C 标准进行文档编写和软件开发</li>
+                        <li>技术栈：C++、Qt、FMOD、DDS、Linux</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>计算机专业课 408 辅导老师</h3>
+                    <p class="company">新东方教育科技集团有限公司</p>
+                    <p class="time">2020.08 - 2020.12 | 郑州</p>
+                    <ul>
+                        <li>负责计算机专业基础课程辅导</li>
+                        <li>帮助学生理解数据结构、操作系统、计算机网络等核心概念</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Projects -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🚀</span> 项目经历</h2>
+                
+                <div class="timeline-item">
+                    <h3>XXX 战术训练仿真系统</h3>
+                    <p class="time">2025.01 - 至今 | 分系统负责人</p>
+                    <ul>
+                        <li>负责系统需求调研与分析，组织完成模块级需求分解</li>
+                        <li>撰写《需求规格说明书》《软件设计说明书》</li>
+                        <li>负责分系统软件研发、联试与集成</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>声音仿真软件开发</h3>
+                    <p class="time">2024.07 - 至今 | 软件负责人</p>
+                    <ul>
+                        <li><strong>环境音效模拟：</strong>模拟飞行员在座舱内听到的各种飞行状态下的声音</li>
+                        <li><strong>告警音频模拟：</strong>通过航电、告警系统触发，播放飞机各系统设备的告警音和提示音</li>
+                        <li><strong>机内通话：</strong>接收模拟器航电信号，通过音频矩阵控制主驾、副驾和教员台之间的通讯</li>
+                        <li><strong>联网通话：</strong>实现多机模拟器之间的联网通话功能，通过以太网连接确保同组内模拟器通讯</li>
+                        <li>应用于多个飞行模拟器项目，包括 601、602、试飞院和某型吊挂飞机模拟器等</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>KY 仿真作战平台中间件开发及飞行轨迹预测</h3>
+                    <p class="time">2023.09 - 2024.03 | 软件开发</p>
+                    <ul>
+                        <li>设计并实现仿真平台与外部系统的中间件，支持实时数据交换</li>
+                        <li>实现仿真实体信息、控制指令、雷达传感器等数据的读取与传输</li>
+                        <li>扩展 xFsim 平台的通信能力，优化数据处理效率和稳定性</li>
+                        <li>使用 Transformer 进行轨迹预测，TensorRT 进行部署</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>基于 FMU 模型的某型飞机模拟器仿真运行平台</h3>
+                    <p class="time">2023.07 - 2024.03 | 软件开发</p>
+                    <ul>
+                        <li>设计实现基于时间触发和序列帧的调度机制，确保多个 FMU 同步运行</li>
+                        <li>利用反馈回路算法实现高精度定时器，精度控制在 0.01 毫秒</li>
+                        <li>确保在同一模拟周期内准确执行 FMU 任务</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>基于 MMLab 框架的人体骨骼动作识别工具</h3>
+                    <p class="time">2022.11 - 2023.03</p>
+                    <ul>
+                        <li>利用 MMDetection 进行人体检测，MMPose 进行姿态估计，MMAction 进行动作识别</li>
+                        <li>完成从人体检测到动作分析的全过程</li>
+                        <li>基于 PyQt 开发可视化操作界面，支持显示人体行为识别结果</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Research -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🔬</span> 研究经历</h2>
+                
+                <div class="timeline-item">
+                    <h3>国家自然科学基金青年项目：人体行为识别课题</h3>
+                    <p class="time">2020.09 - 2022.07 | 算法负责人</p>
+                    <ul>
+                        <li>基于 PyTorch 设计了一种新的全局空间 Transformer 和局部 - 全局时间 Transformer</li>
+                        <li>空间模块使网络专注于学习自适应选择的关键关节点之间的相关性，以及身体部位之间的相关性</li>
+                        <li>时间模块将膨胀时间卷积集成到全局自注意力机制中，捕捉关节点或身体部位的全局和重要局部时间信息</li>
+                        <li>该方法优于现有的基于自注意力机制的方法，性能与最先进的基于 GCN 的方法相当</li>
+                        <li>使用 Seaborn 进行动作识别数据的统计可视化与实验结果呈现</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Papers -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">📄</span> 论文与专利</h2>
+                
+                <div class="paper-item">
+                    <h4>Focal and Global Spatial-Temporal Transformer for Skeleton-based Action Recognition</h4>
+                    <p class="journal">ACCV 2022 (CCF 推荐国际会议) · Oral Presentation</p>
+                    <p><strong>作者：</strong>Zhimin Gao, Peitao Wang, Pei Lv, Xiaoheng Jiang, Qidong Liu, Pichao Wang, Mingliang Xu, Wanqing Li</p>
+                    <p><strong>合作单位：</strong>DAMO Academy (阿里达摩院), University of Wollongong (卧龙岗大学)</p>
+                    <p style="margin-top: 10px;"><em>唯一学生作者合作</em></p>
+                </div>
+                
+                <div class="paper-item">
+                    <h4>发明专利</h4>
+                    <p>《基于自注意力机制的人体动作识别网络和电子装置》</p>
+                </div>
+                
+                <div class="paper-item">
+                    <h4>软件著作权</h4>
+                    <p>《基于 unity 的虚拟人动作捕捉定制平台 V1.0》</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🎓</span> 教育背景</h2>
+                
+                <div class="timeline-item">
+                    <h3>计算机技术 · 硕士</h3>
+                    <p class="company">郑州大学（211）计算机与人工智能学院</p>
+                    <p class="time">2020.09 - 2023.06</p>
+                    <ul>
+                        <li>研究方向：基于 Transformer 的 3D 人体动作识别</li>
+                        <li>荣誉：研究生三好学生、一等学业奖学金</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>计算机科学与技术</h3>
+                    <p class="company">郑州大学（211）太克软件学院</p>
+                    <p class="time">2016.09 - 2020.06</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🛠</span> 技能与证书</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">📌 C++ / Qt</div>
+                    <div class="skill-tag">🐍 Python / PyTorch</div>
+                    <div class="skill-tag">🤖 Transformer / Deep Learning</div>
+                    <div class="skill-tag">👁️ 计算机视觉</div>
+                    <div class="skill-tag">🎮 仿真系统开发</div>
+                    <div class="skill-tag">📡 DDS / Linux</div>
+                    <div class="skill-tag">🔊 FMOD 音频仿真</div>
+                    <div class="skill-tag">📊 数据可视化</div>
+                    <div class="skill-tag">📝 GJB5000B 标准</div>
+                    <div class="skill-tag">🌐 英语 CET-6</div>
+                    <div class="skill-tag">🎙️ 普通话一级</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interests -->
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title"><span class="icon">⚽</span> 兴趣爱好</h2>
+                <p style="color: #555;">
+                    学院篮球队成员，曾获校联赛冠军。热爱运动，享受团队协作带来的乐趣。
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 王沛焘 | 个人主页</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Last updated: 2025</p>
+        </div>
+    </div>
+</body>
+</html>
