@@ -74,10 +74,12 @@
         }
         
         .avatar {
-            width: 200px;
-            height: 200px;
+            max-width: 200px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
             border-radius: 10px;
-            object-fit: cover;
+            object-fit: contain;
             flex-shrink: 0;
             border: 2px solid #eee;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
