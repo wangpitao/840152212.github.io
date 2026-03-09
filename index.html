@@ -242,6 +242,33 @@
             color: #555;
         }
         
+        /* Life Photos */
+        .life-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .life-photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .life-photo-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .life-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
         /* Footer */
         footer {
             text-align: center;
@@ -507,6 +534,16 @@
             <span class="skill-tag">FMOD</span>
             <span class="skill-tag">GJB5000B</span>
             <span class="skill-tag">英语 CET-6</span>
+        </div>
+    </section>
+    
+    <!-- Life Photos -->
+    <section id="life">
+        <h2>📸 生活瞬间</h2>
+        <div class="life-photos">
+            <div class="life-photo-item">
+                <img src="life-photo.jpg" alt="生活照">
+            </div>
         </div>
     </section>
     
